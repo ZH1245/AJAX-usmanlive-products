@@ -6,14 +6,23 @@ $(function () {
 function editProduct() {
   console.log("INSIDE EDIT");
 }
-function deleteProduct() {
-  console.log("INSIDE DEL");
+function deleteProduct(e) {
+  console.log("INSIDE DEL", e);
+  $.ajax({
+    url: "https://usman-recipes.herokuapp.com/api/products/" + e,
+    method: "DELETE",
+    success: function (response) {
+      console.log(response);
+      loadProducts();
+    },
+  });
 }
 function createProduct() {
   console.log("INSIDE Create");
 }
 
 function loadProducts() {
+  $("#mainDiv").empty();
   $.ajax({
     url: "https://usman-recipes.herokuapp.com/api/products",
     method: "GET",
@@ -29,8 +38,8 @@ function loadProducts() {
         delbtn.className = "btn btn-danger";
         delbtn.id = "delBtn";
         delbtn.innerHTML = "Delete";
-        delbtn.onclick = deleteProduct;
-
+        // delbtn.onclick = () => deleteProduct(response[i]._id);
+        delbtn.onclick = () => deleteProduct($(products).attr("id"));
         Editbtn.className = "btn btn-warning";
         Editbtn.id = "editBtn";
         Editbtn.innerHTML = "Edit";
