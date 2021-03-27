@@ -36,9 +36,9 @@ function loadProducts() {
         Editbtn.innerHTML = "Edit";
         Editbtn.onclick = editProduct;
 
-        // products.id = response[i]._id;
-        products.attributes = ("_id", response[i]._id);
-        console.log(products.attributes);
+        products.id = response[i]._id;
+        // products.attributes = ("_id", response[i]._id);
+        // console.log(products.attributes);
         // console.log(response[i]._id);
         products.className = "products";
 
