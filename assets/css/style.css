@@ -8,9 +8,6 @@
 .navbar {
   justify-content: space-between;
 }
-/* .navbar h3 {
-  float: right;
-} */
 .products {
   border-bottom: 4px dotted blue;
   padding-top: 15px;

@@ -1,6 +1,5 @@
 $(function () {
-  $("#editBtn").click(editProduct);
-  $("#delBtn").click(deleteProduct);
+  $("#createProduct").click(createProduct);
   loadProducts();
 });
 
@@ -9,6 +8,9 @@ function editProduct() {
 }
 function deleteProduct() {
   console.log("INSIDE DEL");
+}
+function createProduct() {
+  console.log("INSIDE Create");
 }
 
 function loadProducts() {
@@ -27,11 +29,17 @@ function loadProducts() {
         delbtn.className = "btn btn-danger";
         delbtn.id = "delBtn";
         delbtn.innerHTML = "Delete";
+        delbtn.onclick = deleteProduct;
+
         Editbtn.className = "btn btn-warning";
         Editbtn.id = "editBtn";
         Editbtn.innerHTML = "Edit";
+        Editbtn.onclick = editProduct;
 
-        products.attributes = ("data-id", response[i._id]);
+        // products.id = response[i]._id;
+        products.attributes = ("_id", response[i]._id);
+        console.log(products.attributes);
+        // console.log(response[i]._id);
         products.className = "products";
 
         products.innerHTML = `<h3>${response[i].name}</h3>`;
