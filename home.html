@@ -31,9 +31,44 @@
     </header>
     <div class="container" id="header2">
       <h1>Products Will Appear Here in this Container</h1>
-      <button class="btn btn-primary" id="createProduct" type="button">
-        Create
+      <button
+        id="toggle_collapse"
+        class="btn btn-primary"
+        data-target="#collapseCreate"
+        data-toggle="collapse"
+        aria-expanded="false"
+        aria-controls="my-collapse"
+      >
+        Add Product
       </button>
+      <div id="collapseCreate" class="collapse w-50">
+        <div class="form-group pt-2">
+          <label for="Createname">Name:</label>
+          <input id="Createname" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="Createprice">Price:</label>
+          <input id="Createprice" class="form-control" type="number" />
+        </div>
+        <div class="form-group">
+          <label for="Createcolor">Color:</label>
+          <input id="Createcolor" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="Createdepartment">Department:</label>
+          <input id="Createdepartment" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="Createdescription">Description:</label>
+          <input id="Createdescription" class="form-control" type="text" />
+        </div>
+        <button class="btn btn-primary" type="button" id="CreateProduct">
+          Create
+        </button>
+        <button class="btn btn-primary" type="button" id="CanselCreate">
+          Cancel
+        </button>
+      </div>
       <div id="mainDiv"></div>
     </div>
   </body>
